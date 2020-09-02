@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let height = 100;
+      let total = 100;
+
+      for (let i = 1; i <= 10; i++) {
+        height /= 2;
+        if (i < 10) {
+          total = total + height * 2;
+        }
+        console.log(total);
+      }
+      document.write(`第10次落地共經過${total}公尺，反彈高度為${height}公尺`);
+    </script>
+  </body>
+</html>

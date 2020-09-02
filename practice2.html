@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let com = [
+        [33, 32, 56, 45, 33],
+        [77, 33, 68, 45, 23],
+        [43, 55, 43, 67, 65],
+      ];
+      let price = [12, 16, 10, 14, 15];
+      let Salesmen = [0, 0, 0];
+      let Product = [0, 0, 0, 0, 0];
+      let product = ["A", "B", "C", "D", "E"];
+      let l = 0;
+
+      document.write("<table border='1'width='200'>");
+      for (let i in com) {
+        document.write("<tr>");
+        for (let j in com[i]) {
+          document.write(`<td>${com[i][j]}</td>`);
+          Salesmen[i] += com[i][j] * price[l];
+          Product[j] += com[i][j] * price[j];
+          l++;
+        }
+        l = 0;
+        document.write("</tr>");
+      }
+      document.write("</table>");
+
+      for (let i in Salesmen) {
+        document.write(
+          `銷售員${parseInt(i) + 1}的銷售總金額為${Salesmen[i]}<br>`
+        );
+      }
+
+      for (let i in Product) {
+        document.write(`產品${product[i]}的總銷售金額為${Product[i]}<br>`);
+      }
+    </script>
+  </body>
+</html>

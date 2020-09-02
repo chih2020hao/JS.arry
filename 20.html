@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let TTable = [
+        [18.2, 17.3, 15.0, 13.4],
+        [23.8, 25.1, 20.6, 17.8],
+        [20.6, 21.5, 18.4, 15.7],
+      ];
+      let TDayAvg = [0, 0, 0, 0];
+      let TTimeAvg = [0, 0, 0];
+      let f = ["一", "二", "三", "四"];
+      let max = 0;
+      let min = 100;
+      let k = 0;
+      let l = 0;
+      let m = 0;
+      let n = 0;
+
+      document.write("<table border='1'width='200'>");
+      for (let i in TTable) {
+        document.write("<tr>");
+        for (let j in TTable[i]) {
+          document.write(`<td>${TTable[i][j]}</td>`);
+          TTimeAvg[i] += TTable[i][j];
+          TDayAvg[j] += TTable[i][j];
+          if (TTable[i][j] > max) {
+            max = TTable[i][j];
+            k = i;
+            l = j;
+          } else if (TTable[i][j] < min) {
+            min = TTable[i][j];
+            n = i;
+            m = j;
+          }
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+
+      for (let i in TDayAvg) {
+        document.write(`星期${f[i]}的平均溫度為${TDayAvg[i] / 3}<br>`);
+      }
+
+      for (let i in TTimeAvg) {
+        document.write(`時段${f[i]}的平均溫度為${TTimeAvg[i] / 4}<br>`);
+      }
+
+      document.write(`最高溫為星期${f[k]}時段${f[l]}<br>`);
+      document.write(`最低溫為星期${f[m]}時段${f[n]}`);
+    </script>
+  </body>
+</html>
